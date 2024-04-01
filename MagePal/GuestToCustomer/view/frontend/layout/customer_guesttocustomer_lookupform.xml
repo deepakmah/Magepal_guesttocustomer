@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © MagePal LLC. All rights reserved.
+ * See COPYING.txt for license details.
+ * https://www.magepal.com | support@magepal.com
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <head>
+        <css src="MagePal_GuestToCustomer::css/styles.css" />
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="MagePal\GuestToCustomer\Block\Customer\LookupForm"
+                   name="customer_edit" template="MagePal_GuestToCustomer::customer/lookupform.phtml" cacheable="false">
+                <container name="form.additional.info" as="form_additional_info"/>
+                <container name="content.body.end" as="content_body_end">
+                    <block class="Magento\Framework\View\Element\Template" name="customer_form_validation"
+                           template="MagePal_GuestToCustomer::customer/validation.phtml" cacheable="false" />
+                </container>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
